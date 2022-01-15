@@ -1,0 +1,29 @@
+<% content_for :left_nav do %>
+  <%= link_to semantic_icon('angle left large link'), terms_path %>
+<% end %>
+
+<%= link_to semantic_icon('edit large link'), edit_term_path(@term, partial: 'term'), class: 'right' if current_user %>
+
+<h2 class="ui center aligned header">
+  <%= @term.name %>
+  <%= "<br/>#{@term.short_form_with_parens}".html_safe if @term.short_form.present? %>
+</h2>
+
+<h3>Definitions</h3>
+
+<div class="ui raised segments">
+  <% if current_user %>
+    <div class="ui compact segment">
+      <%= link_to new_term_definition_path(@term) do %>
+        <%= semantic_icon('plus link') %> Add New Definition
+      <% end %>
+    </div>
+  <% end %>
+  <div class="ui compact segment">
+    <div class="ui divided items">
+      <% unless @term.definitions.empty? %>
+        <%= render partial: 'definitions', locals: { definitions: @term.definitions } %>
+      <% end %>
+    </div>
+  </div>
+</div>

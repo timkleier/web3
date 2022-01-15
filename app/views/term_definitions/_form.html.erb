@@ -1,0 +1,34 @@
+<%= form_with(model: term_definition, local: true, class: 'ui form') do |form| %>
+  <% if term_definition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(term_definition.errors.count, "error") %> prohibited this term_definition from being saved:</h2>
+
+      <ul>
+      <% term_definition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :term_id, value: @term.id %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source_name %>
+    <%= form.text_field :source_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source_url %>
+    <%= form.text_field :source_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Save', class: 'ui primary button' %>
+  </div>
+<% end %>

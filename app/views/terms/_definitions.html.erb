@@ -1,0 +1,30 @@
+<% definitions.each do |definition| %>
+  <div class="item">
+    <div class="content">
+      <div class="ui right floated">
+        <% if current_user %>
+          <% if current_user.has_upvoted?(definition) %>
+            <%= link_to semantic_icon('thumbs up'), term_definition_user_vote_path(@term, definition, 1), method: :delete %>
+          <% else %>
+            <%= link_to semantic_icon('thumbs up'), term_definition_user_votes_path(@term, definition), method: :post %>
+          <% end %>
+        <% else %>
+          <%= semantic_icon('thumbs up') %>
+        <% end %>
+        <%= definition.user_votes.size %>
+      </div>
+      <div class="description">
+        <p><%= definition.description.truncate(200) %></p>
+      </div>
+      <div class="extra">
+        <% if current_user %>
+          <div class="ui right floated">
+            <%= link_to semantic_icon('edit link'), edit_term_definition_path(@term, definition) %>
+            <%= link_to semantic_icon('remove link'), term_definition_path(@term, definition), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+        <%= link_to definition.source_name, definition.source_url, target: '_blank' %>
+      </div>
+    </div>
+  </div>
+<% end %>

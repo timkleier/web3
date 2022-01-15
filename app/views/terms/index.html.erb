@@ -1,0 +1,26 @@
+<% content_for :right_nav do %>
+  <%= link_to semantic_icon('plus large link'), new_term_path if @current_user %>
+<% end %>
+
+<h2 class="ui center aligned header">Terms</h2>
+
+<%= form_tag terms_path, :method => 'get', class: 'search' do %>
+  <div id="search-menu" class="ui menu">
+    <div class="ui fluid search item">
+      <div class="ui transparent icon input">
+        <%= text_field_tag :search, params[:search], :placeholder => 'Search terms...', class: 'prompt' %>
+        <%= button_tag :submit do %>
+          <i class="search link icon"></i>
+        <% end %>
+      </div>
+      <div class="results"></div>
+    </div>
+    <!-- <div class="right menu">
+      <a class="item">
+        <i class="filter icon"></i>
+      </a>
+    </div> -->
+  </div>
+<% end %>
+
+<%= render 'terms_list', terms: @terms %>

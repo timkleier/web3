@@ -1,0 +1,22 @@
+<% content_for :right_nav do %>
+  <%= link_to semantic_icon('plus large link'), new_resource_path %>
+<% end %>
+
+<h2 class="ui center aligned header">Resources</h2>
+
+<div id="search-menu" class="ui menu">
+  <div class="ui fluid search item">
+    <div class="ui transparent icon input">
+      <input class="prompt" type="text" placeholder="Search resources...">
+      <i class="search link icon"></i>
+    </div>
+    <div class="results"></div>
+  </div>
+  <div class="right menu">
+    <a class="item">
+      <i class="filter icon"></i>
+    </a>
+  </div>
+</div>
+
+<%= render 'resources_list', resources: @resources %>

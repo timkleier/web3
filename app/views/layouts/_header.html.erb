@@ -1,0 +1,14 @@
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div id="nav-bar" class="ui grid">
+  <div class="two wide column">
+    <%= yield :left_nav %>
+  </div>
+  <div id="logo-container" class="twelve wide column">
+    <%# image_tag asset_path("sagen") %>
+  </div>
+  <div class="two wide column">
+    <%= yield :right_nav %>
+  </div>
+</div>

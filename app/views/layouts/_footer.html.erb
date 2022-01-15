@@ -1,0 +1,8 @@
+<div id="footer" class="ui fluid two item small labeled icon inverted menu">
+  <%= link_to footer_menu_item('Terms', 'book'), terms_path, class: "item" %>
+  <% if current_user %>
+    <%= link_to footer_menu_item('Logout', 'cog'), destroy_user_session_path, method: :delete, class: "item" %>
+  <% else %>
+    <%= link_to footer_menu_item('Login', 'user'), new_user_session_path, class: "item" %>
+  <% end %>
+</div>

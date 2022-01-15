@@ -1,0 +1,17 @@
+<div class="auth-bg" style="height: 100%">
+  <%= form_for(resource, url: session_path(resource_name), html: {class: 'ui form'}) do |f| %>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Save', class: 'ui primary button' %>
+    </div>
+  <% end %>
+</div>

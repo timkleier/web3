@@ -1,0 +1,7 @@
+<% content_for :left_nav do %>
+  <%= link_to semantic_icon('angle left large link'), terms_path %>
+<% end %>
+
+<h1>New Term</h1>
+
+<%= render 'form', term: @term %>

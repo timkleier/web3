@@ -1,0 +1,9 @@
+<div id="term-items" class="ui fluid divided items">
+  <% terms.each do |term| %>
+    <div class="item">
+      <div class="content">
+        <%= link_to term.title, term, class: "header" %>
+      </div>
+    </div>
+  <% end %>
+</div>

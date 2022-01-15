@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @term_definition.description %>
+</p>
+
+<p>
+  <strong>Source name:</strong>
+  <%= @term_definition.source_name %>
+</p>
+
+<p>
+  <strong>Source url:</strong>
+  <%= @term_definition.source_url %>
+</p>
+
+<%= link_to 'Edit', edit_term_definition_path(@term_definition) %> |
+<%= link_to 'Back', term_definitions_path %>

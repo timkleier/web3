@@ -1,0 +1,7 @@
+<% content_for :left_nav do %>
+  <%= link_to semantic_icon('angle left large link'), resources_path %>
+<% end %>
+
+<h2 class="ui center aligned header">New Resource</h2>
+
+<%= render 'form', resource: @resource %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  definition: MyText
+  source_url: MyString
+  source_name: MyString
+  term: one
+
+two:
+  definition: MyText
+  source_url: MyString
+  source_name: MyString
+  term: two

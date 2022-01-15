@@ -1,0 +1,17 @@
+<% content_for :left_nav do %>
+  <%= link_to semantic_icon('angle left large link'), resources_path %>
+<% end %>
+
+<% content_for :right_nav do %>
+  <%= link_to semantic_icon('share large link'), new_recommendation_path(User.first, resource_id: @resource.id) %>
+<% end %>
+
+<div class="ui segments">
+  <div class="ui no-padding basic segment">
+    <%= image_tag @resource.image_url, class: 'resource-item-image' if @resource.image_url %>
+  </div>
+  <div class="ui basic segment">
+    <h2 class="ui center aligned header"><%= @resource.title %></h2>
+    <p><%= @resource.description %></p>
+  </div>
+</div>

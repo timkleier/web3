@@ -1,0 +1,16 @@
+<% content_for :right_nav do %>
+  <%= link_to semantic_icon('plus large link'), new_user_path %>
+<% end %>
+
+<h2 class="ui center aligned header">Users</h2>
+
+<div id="resource-items" class="ui fluid divided link items">
+  <% @users.each do |user| %>
+    <div class="item">
+      <%= image_tag user.image_url, class: 'resource-item-list-image' if user.image_url %>
+      <div class="content">
+        <%= link_to "#{user.first_name} #{user.last_name}", user, class: "header" %>
+      </div>
+    </div>
+  <% end %>
+</div>

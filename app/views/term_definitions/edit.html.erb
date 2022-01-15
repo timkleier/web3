@@ -1,0 +1,7 @@
+<% content_for :left_nav do %>
+  <%= link_to semantic_icon('angle left large link'), @term %>
+<% end %>
+
+<h2 class="ui center aligned header">Editing <%= @term.name %> Definition</h2>
+
+<%= render 'form', term_definition: @term_definition %>

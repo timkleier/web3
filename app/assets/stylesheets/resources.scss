@@ -1,0 +1,26 @@
+// Place all the styles related to the Resources controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#resource-items {
+  .item {
+    flex-direction: row;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    .content {
+      padding-left: 10px;
+    }
+  }
+}
+
+.resource-item-list-image {
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+}
+
+.resource-item-image {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}

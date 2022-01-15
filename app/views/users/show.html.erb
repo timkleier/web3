@@ -1,0 +1,9 @@
+<% content_for(:body_attributes) do %>
+  data-turbolinks="false"
+<% end %>
+
+<% content_for :left_nav do %>
+  <%= link_to semantic_icon('angle left large link'), users_path %>
+<% end %>
+
+<h3>User: <%= @user.display_name %></h3>
